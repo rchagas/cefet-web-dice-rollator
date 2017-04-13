@@ -11,16 +11,13 @@
 // .quantidade: todos os input[type=number] com a quantidade de dados a serem rolados
 // #quantidadeD{4,6,8,10,12,20}: um ID para cada input[type=number] com a quantidade
 
-function rollDice(i){
-	Math.ceil(Math.random()*i);
-}
 const typeDice = [4,6,8,10,12,20];
-var rolar = document.getElementById('rolar');
-rolar.addEventListener('click', function(){
+let roll = document.getElementById('rolar');
+roll.addEventListener('click', function(){
 	let html = document.getElementById('resultado');
 	let resultT = '';
 	let resultN = 0;
-	let numDices = [document.getElementById('quantidadeD4').value,
+	let numDices = [	document.getElementById('quantidadeD4').value,
 				document.getElementById('quantidadeD6').value,
 				document.getElementById('quantidadeD8').value,
 				document.getElementById('quantidadeD10').value,
