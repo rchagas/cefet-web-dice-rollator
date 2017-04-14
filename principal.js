@@ -11,30 +11,26 @@
 // .quantidade: todos os input[type=number] com a quantidade de dados a serem rolados
 // #quantidadeD{4,6,8,10,12,20}: um ID para cada input[type=number] com a quantidade
 
-const typeDice = [4,6,8,10,12,20];
-let roll = document.getElementById('rolar');
-roll.addEventListener('click', function(){
-	let html = document.getElementById('resultado');
+function rollDices(){
+	let numDices = document.querySelectorAll('input');
+	const typeDice = [4,6,8,10,12,20];
 	let resultT = '';
 	let resultN = 0;
-	let numDices = [	document.getElementById('quantidadeD4').value,
-				document.getElementById('quantidadeD6').value,
-				document.getElementById('quantidadeD8').value,
-				document.getElementById('quantidadeD10').value,
-				document.getElementById('quantidadeD12').value,
-				document.getElementById('quantidadeD20').value];
 	for(let i=0; i<numDices.length;i++){
-		if(numDices[i]!=0){
-			resultT = resultT+'<p>D'+(typeDice[i])+': '
-			for (let j=0; j<numDices[i]; j++){
+		if(numDices[i].value!=0){
+			resultT +='<p>D'+(typeDice[i])+': '
+			for (let j=0; j<numDices[i].value; j++){
 				let temp = Math.ceil(Math.random()*typeDice[i]);
 				resultN += temp;
-				resultT = resultT+temp+' + ';
+				resultT += temp+' + ';
 			}
 			resultT = resultT.substring(0,resultT.length-2)+'</p>';
 		}
 	}
-	resultT = resultT+'<p>Total: '+resultN+'</p>';
-	html.innerHTML = resultT;
+	resultT += '<p>Total: '+resultN+'</p>';
+	document.getElementById('resultado').innerHTML = resultT;
 	document.getElementById('recipienteResultados').classList.remove('oculto');
-});
+}
+
+let roll = document.getElementById('rolar');
+roll.addEventListener('click', rollDices);
