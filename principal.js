@@ -17,8 +17,8 @@ function rollDices(){
 	let resultT = '';
 	let resultN = 0;
 	for(let i=0; i<numDices.length;i++){
-		if(numDices[i].value!=0){
-			resultT +='<p>D'+(typeDice[i])+': '
+		if(numDices[i].value!==0){
+			resultT +='<p>D'+(typeDice[i])+': ';
 			for (let j=0; j<numDices[i].value; j++){
 				let temp = Math.ceil(Math.random()*typeDice[i]);
 				resultN += temp;
