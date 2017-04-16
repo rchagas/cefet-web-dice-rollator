@@ -1,6 +1,4 @@
 // Faça seu exercício neste arquivo
-
-
 // Alguns elementos importantes na página (index.html):
 // #rolar: Botão rolar
 //	 - você deve atribuir um handler de evento a ele para fazer o cálculo da rolagem dos dados
@@ -17,7 +15,7 @@ function rollDices(){
 	let resultT = '';
 	let resultN = 0;
 	for(let i=0; i<numDices.length;i++){
-		if(numDices[i].value!==0){
+		if(numDices[i].value!=='0'){
 			resultT +='<p>D'+(typeDice[i])+': ';
 			for (let j=0; j<numDices[i].value; j++){
 				let temp = Math.ceil(Math.random()*typeDice[i]);
