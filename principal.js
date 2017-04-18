@@ -10,7 +10,7 @@
 // #quantidadeD{4,6,8,10,12,20}: um ID para cada input[type=number] com a quantidade
 
 function rollDices(){
-	let numDices = document.querySelectorAll('input');
+	let numDices = document.querySelectorAll('.dado input');
 	const typeDice = [4,6,8,10,12,20];
 	let resultT = '';
 	let resultN = 0;
